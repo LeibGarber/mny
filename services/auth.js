@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pro')
+angular.module('mny')
   .service('auth', function($http, $q){
 
       var that = this;

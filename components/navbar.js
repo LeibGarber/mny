@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pro')
+angular.module('mny')
     .directive('navBar', function () {
 	return {
 	    templateUrl: 'components/navbar.html',

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pro')
+angular.module('mny')
     .controller('LoginCtrl', function($scope, $http, $state, $stateParams){
 
 	
