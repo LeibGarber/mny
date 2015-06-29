@@ -9,7 +9,7 @@ angular.module('mny')
 		fodal:'=',
 		fodalClose:'&'
 	    },
-	    transclude:false,
+	    transclude:true,
 	    controller: function($scope, $state){
 		console.log('fodal booted');
 	    	$scope.stopBubble = function(e){

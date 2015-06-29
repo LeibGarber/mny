@@ -1,8 +1,9 @@
-<div class="fodal-background" ng-show="fodal"  ng-click="fodalClose()">
+<div class="fodal-background" ng-if="fodal"  ng-click="fodalClose()">
   <div class="fodal-window" ng-click="stopBubble($event)">
 
-    {{fodal}}
 
+    <div ng-transclude>
+    </div>
     <button class="btn btn-primary"
 	    ng-click="fodalClose()">
       Close
