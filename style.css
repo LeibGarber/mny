@@ -1,3 +1,36 @@
 .topspace {
     margin-top:16vh;
 }
+.active-spend {
+
+    border : 2px solid gray;
+    font-weight: bold ;
+
+}
+
+.fodal-background {
+    position:fixed;
+    top: 0;
+    left:0;
+    height:100vh;
+    width:100vw;
+    background-color:rgba(100,100,100,.75);
+
+    
+}
+
+.fodal-window {
+    position:fixed;
+    top:15vh;
+    left:30vw;
+    height:60vh;
+    width:60vw;
+    min-height:300px;
+    background-color:white;
+    border-radius:12px;
+    padding:12px;
+
+    
+}
+
+

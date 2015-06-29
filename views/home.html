@@ -1,3 +1,22 @@
+<label for="filter-by">Filter By</label>
+<select ng-model="filterBy" id="filter-by"
+	ng-options="ctg.tag as ctg.disp for ctg in ctgs">
+  <option value="">- Please Choose -</option>
+</select>
+
+<label for="filter-by">Value</label>
+<select ng-model="filterValue" id="filter-Value"
+	ng-options="val as val for val in vals ">
+  <option value="">- Please Choose -</option>
+ <!-- make an option which displays everything and bypasses the filter
+      also make it that when a currency is selected, the currency filter 
+      passes O and converts it to N.-->
+      
+</select>
+
+
+
+
 <table class="table table-hover">
   <thead>
     <th>No.</th>
@@ -6,7 +25,12 @@
     <th>Date</th>
     <th>Category</th>
   </thead>
-  <tr ng-repeat="spend in spends">
+  <tr ng-repeat="spend in spends | filter:byValue(filterBy, filterValue)"
+      ng-class="spend.activeClass" 
+      ng-click="setActive(spend)"
+      ng-dblclick="setLandmark('fodalSource',spend)">
+<!--the problem is here? since the ng click is inside an ng repeat, then each separate ng repeat is an its own independent existence and therefore the toggle doesn't apply between them. so the ng click needs to be either placed somewhere else or instructed to treat all the ng repeat items in the table as one entity playing under the same set of rules....figure it out.-->
+
     <td>{{$index+1}}.</td>
     <td>{{spend.value}}</td>
     <td>{{spend.currency}}</td>
@@ -16,3 +40,7 @@
   
 </table>
 
+<div fodal="landmarks.fodalSource"
+     fodal-close="setLandmark('fodalSource', false)">
+  
+</div>
